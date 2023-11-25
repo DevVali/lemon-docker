@@ -1,7 +1,13 @@
 FROM tourdeapp/php-8.1
 
-COPY . /app
+WORKDIR /app
+
+COPY composer*.json ./
+
+RUN composer install
 
 EXPOSE 80
 
-CMD ["/app/start.sh"]
+COPY . .
+
+ENTRYPOINT php -S 0.0.0.0:80 -t public
