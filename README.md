@@ -1,11 +1,18 @@
-# Lemon app skeleton
+# Lemon app skeleton with Docker
 
-This repository contains advanced skeleton based on Lemon and Laravel mix.
+This repository contains advanced app skeleton for building via Docker.
 
-## Instalation
+## Running locally
 
 ```
-$ git clone https://github.com/Lemon-Framework/app
+$ docker build . -t devvali/lemon-docker:latest
 
-$ make
+$ docker run --rm -p 8000:80 -v ${pwd}:/app devvali/lemon-docker:latest
 ```
+
+The application will be served at `http://localhost:8000`. [Docker](https://www.docker.com/) is required for successful installation.
+
+## TODO
+
+- [ ] Docker-compose
+- [ ] Reflect changes real-time inside a container
